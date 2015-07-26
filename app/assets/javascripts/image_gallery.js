@@ -17,7 +17,7 @@ function Gallery(someImageList) {
 
   this.chirpy = function(){
     _.each(this.chirrups, function(o){
-      o.cheese();
+      o.birdy();
     });
   }
 
@@ -48,14 +48,16 @@ function Chirrup(locationShot) {
   this.source_url = locationShot.source_link;
   this.source_id = locationShot.id;
   $outerChirp = $('<div id="wrapper2"></div>');
-  this.cheese = function(){
+  $('#wrapper2').prepend('<h2>All the birdies in the world unite!</h2>'); 
+  this.birdy = function(){
     $chirp = $('<div id="chirp-' + this.source_id + '" class="chirp" draggable="true"></div>');
     $chirp.css('background-image', 'url(' + this.source_url + ')');
     //$chirp.css('draggable', 'true');
     $('body').append($outerChirp);
     //$('.chirp').draggable();
     //console.log("is chirp draggable: " + $('.chirp').css('draggable'));
-    $outerChirp.append($chirp);
+    //$outerChirp.append($chirp);
+    $chirp.appendTo($outerChirp);
   }
 }
 
@@ -129,5 +131,25 @@ $(document).ready(function() {
 	.bind('drag', function (evt) { 
 		        console.log('drag'); 
 	              });
+
+  $('#other-sandbox') 
+    .bind('dragover', function(evt) { 
+                        evt.preventDefault(); 
+                      }) 
+    .bind('dragenter', function(evt) { 
+                         evt.preventDefault(); 
+                       }) 
+    .bind('drop', function(evt) { 
+                    $("h2").fadeOut('fast'); 
+                    var id = evt.originalEvent.dataTransfer.getData('text'); 
+                    item = $('#' + id); 
+                    //item.appendTo($('#other-sandbox'));
+                    getBG = item.css('background-image');
+                    $('#other-sandbox').css('background-image',getBG);
+                  })
+    .bind('dragleave', function (evt) { 
+                         console.log('dragleave'); 
+                       }); 
+
 });
 
