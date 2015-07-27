@@ -12,16 +12,12 @@
     cursor : move; 
 }
 
-body {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-#wrapper, #wrapper2, #sandbox, #other-sandbox {
-  top: 5px;
+#sandbox {
+  top: 50px;
   left: 10px;
   width: 15%;
-  height: 990px;
-  border: dotted;
+  height: 900px;
+  border: dashed;
   position: relative;
   float: left;
   padding: 10px;
@@ -29,39 +25,71 @@ body {
 }
 
 #other-sandbox {
+  top: 50px;
+  left: 10px;
+  width: 15%;
+  height: 900px;
+  border: dashed;
+  position: relative;
+  float: left;
+  padding: 10px;
+  margin: 20px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+h2 { 
+    position: relative; 
+    bottom: 20px; 
+    color: #fff; 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.75); 
+    display: none; 
+} 
+
 #wrapper {
+  top: 50px;
+  left: 10px;
+  height: 900px;
+  width: 15%;
+  position: relative;
+  float: left;
   border: solid;
+  padding: 10px;
+  margin: 20px;
 }
 
-p { 
-    position: relative; 
-    bottom: 15px; 
-    font-size: 20px;
-    color: rgba(240, 240, 240, 0.6);
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9); 
-    display: block;
-} 
+#wrapper2 {
+  top: 50px;
+  left: 10px;
+  height: 900px;
+  width: 15%;
+  position: relative;
+  float: left;
+  border: solid;
+  padding: 10px;
+  margin: 20px;
+}
 
 .pic, .chirp {
   draggable: 'true';
   border: solid 1px;
   background-size: cover;
+  /*background-origin: content-box;
+  background-clip: content-box;*/
   width: 150px;
   height: 150px;
   float: left;
   padding: 10px;
   margin: 10px;
   background-repeat: no-repeat;
-  /*background-origin: content-box;
-  background-clip: content-box;*/
   /*
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
   */
+}
+
+img {
+  
 }
 
